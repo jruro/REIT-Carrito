@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+<robot name="carritov2">
+
+  <link name="chasis1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="1.5 1.2 0.3"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.25 0 0.1"/>
+    </visual>
+  </link>
+
+  <link name="chasis2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.5 0.4 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+      <origin rpy="0 0 0" xyz="0.72 0 0.275"/>
+    </visual>
+  </link>
+
+  <joint name="chasis1_to_chasis2" type="fixed">
+    <parent link="chasis1"/>
+    <child link="chasis2"/>
+  </joint>
+
+  <link name="soporte1_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.92 0 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte1_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte1_base1"/>
+  </joint>
+
+  <link name="soporte12_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.92 -0.06 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte12_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte12_base1"/>
+  </joint>
+
+  <link name="soporte13_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.01 0.05 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.955 -0.03 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte13_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte13_base1"/>
+  </joint>
+
+  <link name="soporte1_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.53 0 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte1_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte1_base2"/>
+  </joint>
+
+  <link name="soporte2_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.92 0.07 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte2_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte2_base1"/>
+  </joint>
+
+  <link name="soporte2_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.53 0.07 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte2_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte2_base2"/>
+  </joint>
+
+  <link name="soporte22_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.92 0.01 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte22_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte22_base1"/>
+  </joint>
+
+  <link name="soporte23_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.01 0.05 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.955 0.04 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte23_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte23_base1"/>
+  </joint>
+
+  <link name="soporte3_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.92 0.14 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte3_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte3_base1"/>
+  </joint>
+
+  <link name="soporte3_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.53 0.14 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte3_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte3_base2"/>
+  </joint>
+
+  <link name="soporte32_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.92 0.08 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte32_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte32_base1"/>
+  </joint>
+
+  <link name="soporte33_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.01 0.05 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.955 0.10 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte33_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte33_base1"/>
+  </joint>
+
+  <link name="soporte4_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.92 -0.14 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte4_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte4_base1"/>
+  </joint>
+
+  <link name="soporte4_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.53 -0.14 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte4_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte4_base2"/>
+  </joint>
+
+  <link name="soporte5_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.92 -0.07 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte5_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte5_base1"/>
+  </joint>
+
+  <link name="soporte5_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.08 0.01 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.53 -0.07 0.325"/>
+    </visual>
+  </link>
+
+  <joint name="soporte5_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte5_base2"/>
+  </joint>
+
+  <link name="chasis3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.5 0.35 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+      <origin rpy="0 0 0" xyz="0.5 0.39 0.275"/>
+    </visual>
+  </link>
+
+  <joint name="chasis1_to_chasis3" type="fixed">
+    <parent link="chasis1"/>
+    <child link="chasis3"/>
+  </joint>
+
+  <link name="soporte1_base3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 0.53 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte1_base3_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte1_base3"/>
+  </joint>
+
+  <link name="soporte1_base4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 0.53 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte1_base4_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte1_base4"/>
+  </joint>
+
+  <link name="soporte2_base3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 0.46 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte2_base3_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte2_base3"/>
+  </joint>
+
+  <link name="soporte2_base4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 0.46 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte2_base4_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte2_base4"/>
+  </joint>
+
+  <link name="soporte3_base3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 0.39 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte3_base3_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte3_base3"/>
+  </joint>
+
+  <link name="soporte3_base4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 0.39 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte3_base4_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte3_base4"/>
+  </joint>
+
+  <link name="soporte4_base3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 0.32 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte4_base3_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte4_base3"/>
+  </joint>
+
+  <link name="soporte4_base4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 0.32 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte4_base4_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte4_base4"/>
+  </joint>
+
+  <link name="soporte5_base3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 0.25 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte5_base3_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte5_base3"/>
+  </joint>
+
+  <link name="soporte5_base4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 0.25 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte5_base4_to_chasis3" type="fixed">
+    <parent link="chasis3"/>
+    <child link="soporte5_base4"/>
+  </joint>
+
+  <link name="chasis4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.5 0.35 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+      <origin rpy="0 0 0" xyz="0.5 -0.39 0.275"/>
+    </visual>
+  </link>
+
+  <joint name="chasis1_to_chasis4" type="fixed">
+    <parent link="chasis1"/>
+    <child link="chasis4"/>
+  </joint>
+
+  <link name="soporte1_base5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 -0.53 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte1_base5_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte1_base5"/>
+  </joint>
+
+  <link name="soporte1_base6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 -0.53 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte1_base6_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte1_base6"/>
+  </joint>
+
+  <link name="soporte2_base5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 -0.46 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte2_base5_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte2_base5"/>
+  </joint>
+
+  <link name="soporte2_base6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 -0.46 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte2_base6_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte2_base6"/>
+  </joint>
+
+  <link name="soporte3_base5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 -0.39 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte3_base5_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte3_base5"/>
+  </joint>
+
+  <link name="soporte3_base6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 -0.39 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte3_base6_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte3_base6"/>
+  </joint>
+
+  <link name="soporte4_base5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 -0.32 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte4_base5_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte4_base5"/>
+  </joint>
+
+  <link name="soporte4_base6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 -0.32 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte4_base6_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte4_base6"/>
+  </joint>
+
+  <link name="soporte5_base5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.28 -0.25 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte5_base5_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte5_base5"/>
+  </joint>
+
+  <link name="soporte5_base6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.08"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.73 -0.25 0.34"/>
+    </visual>
+  </link>
+
+  <joint name="soporte5_base6_to_chasis4" type="fixed">
+    <parent link="chasis4"/>
+    <child link="soporte5_base6"/>
+  </joint>
+
+  <link name="zona_union">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 0.5 0.02"/>
+      </geometry>
+      <material name="aluminium"/>
+      <origin rpy="0 0 0" xyz="-0.05 0 0.26"/>
+    </visual>
+  </link>
+
+  <joint name="chasis1_to_zona_union" type="fixed">
+    <parent link="chasis1"/>
+    <child link="zona_union"/>
+  </joint>
+
+  <link name="pared1_buffer">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.27 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+      <origin rpy="0 0 0" xyz="0.1 -0.44 0.275"/>
+    </visual>
+  </link>
+
+  <joint name="chasis1_to_pared1_buffer" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared1_buffer"/>
+  </joint>
+
+  <!--<link name="pared2_buffer">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.27 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+      <origin rpy="0 0 0" xyz="0.1 -0.44 0.275"/>
+    </visual>
+  </link>
+
+  <joint name="chasis1_to_pared2_buffer" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared1_buffer"/>
+  </joint>-->
+
+  <!--<gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>-->
+
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+
+</robot>

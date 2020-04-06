@@ -1,0 +1,23 @@
+<package>
+  <name>rose_models_v2</name>
+  <version>0.4.0</version>
+
+  <description>This package contains the robot model for REE.</description>
+  <author email="jruro7768@gmail.com">Juan Rubio</author>
+
+  <maintainer email="jruro7768@gmail.com">Juan Rubio</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>gazebo_msgs</build_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>gazebo_msgs</run_depend>
+
+</package>

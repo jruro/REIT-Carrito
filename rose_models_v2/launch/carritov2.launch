@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- These are the arguments you can pass this launch file, for example paused:=true -->
+
+  <arg name="paused" default="true"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+
+  <!-- Edit the name of the world file (example_underwater.world) when using this template -->
+    <arg name="world_name" value="worlds/empty_sky.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+
+  </include>
+
+  <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
+
+  <param name="robot_description2" command="$(find xacro)/xacro.py $(find rose_models_v2)/urdf/ur3.urdf.xacro" />
+
+  <!--<param name="robot_description2" textfile="$(find rose_models_v2)/urdf/ur3.urdf.xacro" />-->
+
+  <node name="spawn_urdf2" pkg="gazebo_ros" type="spawn_model"
+    args="-z 5.0 -unpause -urdf -model ur3 -param robot_description2" respawn="false" output="screen" />
+
+  <!--<param name="robot_description" textfile="$(find rose_models_v2)/urdf/carritov2.urdf" />
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+    args="-z 1.0 -unpause -urdf -model carritov2 -param robot_description" respawn="false" output="screen" />-->
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>

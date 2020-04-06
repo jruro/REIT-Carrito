@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="limited" default="false" doc="If true, limits joint range [-PI, PI] on all joints." />
+  <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+  
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <!-- send robot urdf to param server -->
+  <include file="$(find ur_description)/launch/ur3_upload.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include>
+
+  <include file="$(find rose_models_v2)/launch/ur3_upload.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include>
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_gazebo_model1" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 1.28 -x 0.25" respawn="false" output="screen" />
+
+  <node name="spawn_gazebo_model2" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description2 -model robot2 -z 1.28 -x -0.3 -Y -1.57" respawn="false" output="screen" />
+
+  <!--<node name="spawn_gazebo_model2" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description3 -model robot -z 1.28 -x -5" respawn="false" output="screen" />-->
+
+  <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
+
+  <!-- start this controller -->
+  <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur3.yaml" command="load"/>
+
+  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen"/>
+
+  <!-- load other controllers -->
+  <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_position_controller" />
+
+  <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
+
+  <param name="robot_description3" textfile="$(find rose_models_v2)/urdf/carritov4.urdf" />
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+    args="-z 1.0 -unpause -urdf -model carritov2 -param robot_description3" respawn="false" output="screen" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+  <!--<param name="sep_description" textfile="$(find rose_models_v2)/models/separador_stl/model.sdf"/>
+
+  <node name="spawn_sep_description" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-sdf -model Separador -param sep_description -x 0 -y 0 -z 5 -R 0 -P 0 -Y 0"/>-->
+
+</launch>
