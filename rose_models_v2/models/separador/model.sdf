@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name="separador">
+	<static>true</static>
+	<pose>0 0 0 0 0 0</pose>
+
+          <link name='chassis'>
+
+            <collision name='collision'>
+              <geometry>
+                <mesh>
+                  <uri>model://separador/meshes/Separador_Saprem_v10.obj</uri>
+                  <scale>0.001 0.001 0.001</scale>
+                </mesh>
+              </geometry>
+            </collision>
+
+            <visual name='visual'>
+              <geometry>
+                <mesh>
+                  <uri>model://separador/meshes/Separador_Saprem_v10.obj</uri>
+                  <scale>0.001 0.001 0.001</scale>
+                </mesh>
+              </geometry>
+
+            </visual>
+          </link>
+
+  </model>
+</sdf>

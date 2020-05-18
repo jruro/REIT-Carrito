@@ -6,7 +6,7 @@
   
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" default="worlds/empty.world"/>
+    <arg name="world_name" default="worlds/empty_sky.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gui)"/>
   </include>
@@ -16,16 +16,8 @@
     <arg name="limited" value="$(arg limited)"/>
   </include>
 
-  <include file="$(find rose_models_v2)/launch/ur3_upload.launch">
-    <arg name="limited" value="$(arg limited)"/>
-  </include>
-
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="spawn_gazebo_model1" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 1.28 -x 0.25" respawn="false" output="screen" />
-
-  <node name="spawn_gazebo_model2" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description2 -model robot2 -z 1.28 -x -0.3 -Y -1.57" respawn="false" output="screen" />
-
-  <!--<node name="spawn_gazebo_model2" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description3 -model robot -z 1.28 -x -5" respawn="false" output="screen" />-->
+  <node name="spawn_gazebo_model1" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 1.3 -x 0.05" respawn="false" output="screen" />
 
   <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
 
@@ -37,19 +29,105 @@
   <!-- load other controllers -->
   <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_position_controller" />
 
-  <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
-
-  <param name="robot_description3" textfile="$(find rose_models_v2)/urdf/carritov4.urdf" />
+  <param name="robot_description3" textfile="$(find rose_models_v2)/urdf/carritov6.urdf" />
 
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
-    args="-z 1.0 -unpause -urdf -model carritov2 -param robot_description3" respawn="false" output="screen" />
+    args="-z 0.998 -x 0 -unpause -urdf -model carritov4 -param robot_description3" respawn="false" output="screen" />
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
-  
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
 
-  <!--<param name="sep_description" textfile="$(find rose_models_v2)/models/separador_stl/model.sdf"/>
+  <!-- Carga de los separadores -->
 
-  <node name="spawn_sep_description" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-sdf -model Separador -param sep_description -x 0 -y 0 -z 5 -R 0 -P 0 -Y 0"/>-->
+  <param name="sep1" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf1" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.875 -x 0.679 -y 0.2 -R 1.57 -Y 3.14 -unpause -sdf -model sep1 -param sep1" respawn="false" output="screen" />
+
+  <param name="sep2" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf2" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.921 -x 0.679 -y 0.2 -R 1.57 -Y 3.14 -unpause -sdf -model sep2 -param sep2" respawn="false" output="screen" />
+
+  <param name="sep3" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf3" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.967 -x 0.679 -y 0.2 -R 1.57 -Y 3.14 -unpause -sdf -model sep3 -param sep3" respawn="false" output="screen" />
+
+  <param name="sep4" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf4" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.875 -x 0.679 -y 0.095 -R 1.57 -Y 3.14 -unpause -sdf -model sep4 -param sep4" respawn="false" output="screen" />
+
+  <param name="sep5" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf5" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.921 -x 0.679 -y 0.095 -R 1.57 -Y 3.14 -unpause -sdf -model sep5 -param sep5" respawn="false" output="screen" />
+
+  <param name="sep6" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf6" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.967 -x 0.679 -y 0.095 -R 1.57 -Y 3.14 -unpause -sdf -model sep6 -param sep6" respawn="false" output="screen" />
+
+  <param name="sep7" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf7" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.875 -x 0.679 -y -0.01 -R 1.57 -Y 3.14 -unpause -sdf -model sep7 -param sep7" respawn="false" output="screen" />
+
+  <param name="sep8" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf8" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.921 -x 0.679 -y -0.01 -R 1.57 -Y 3.14 -unpause -sdf -model sep8 -param sep8" respawn="false" output="screen" />
+
+  <param name="sep9" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf9" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.967 -x 0.679 -y -0.01 -R 1.57 -Y 3.14 -unpause -sdf -model sep9 -param sep9" respawn="false" output="screen" />
+
+  <param name="sep10" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf10" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.875 -x 0.679 -y -0.115 -R 1.57 -Y 3.14 -unpause -sdf -model sep10 -param sep10" respawn="false" output="screen" />
+
+  <param name="sep11" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf11" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.921 -x 0.679 -y -0.115 -R 1.57 -Y 3.14 -unpause -sdf -model sep11 -param sep11" respawn="false" output="screen" />
+
+  <param name="sep12" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf12" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.967 -x 0.679 -y -0.115 -R 1.57 -Y 3.14 -unpause -sdf -model sep12 -param sep12" respawn="false" output="screen" />
+
+  <param name="sep13" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf13" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.875 -x 0.679 -y -0.220 -R 1.57 -Y 3.14 -unpause -sdf -model sep13 -param sep13" respawn="false" output="screen" />
+
+  <param name="sep14" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf14" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.921 -x 0.679 -y -0.220 -R 1.57 -Y 3.14 -unpause -sdf -model sep14 -param sep14" respawn="false" output="screen" />
+
+  <param name="sep15" textfile="$(find rose_models_v2)/models/separador/model.sdf" />
+
+  <node name="spawn_urdf15" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.967 -x 0.679 -y -0.220 -R 1.57 -Y 3.14 -unpause -sdf -model sep15 -param sep15" respawn="false" output="screen" />
+
+<!-- Carga del suelo y de los cables -->
+
+  <param name="suelo" textfile="$(find rose_models_v2)/models/labrob_ground/model.sdf" />
+
+  <node name="suelo" pkg="gazebo_ros" type="spawn_model"
+    args="-z 0.1 -unpause -sdf -model suelo -param suelo" respawn="false" output="screen" />
+
+  <param name="cable1" textfile="$(find rose_models_v2)/models/cable/model.sdf" />
+
+  <node name="cable1" pkg="gazebo_ros" type="spawn_model"
+    args="-z 1.85 -y -0.2 -P 1.57 -unpause -sdf -model cable1 -param cable1" respawn="false" output="screen" />
+
+  <param name="cable2" textfile="$(find rose_models_v2)/models/cable/model.sdf" />
+
+  <node name="cable2" pkg="gazebo_ros" type="spawn_model"
+    args="-z 1.85 -y 0.2 -P 1.57 -unpause -sdf -model cable2 -param cable2" respawn="false" output="screen" />
 
 </launch>

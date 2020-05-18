@@ -1,0 +1,1210 @@
+<?xml version="1.0"?>
+<robot name="carritov6">
+
+<!--
+  Author: Juan Rubio Romera
+-->
+
+  <link name="chasis1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="1.60 0.70 0.30"/> <!--cotas en cm -->
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1.60 0.70 0.30"/> <!--cotas en cm -->
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="chasis2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.5 0.5 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.5 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_chasis2" type="fixed">
+    <parent link="chasis1"/>
+    <child link="chasis2"/>
+    <origin rpy="0 0 0" xyz="0.53 0 0.17"/>
+  </joint>
+
+
+
+
+ <!-- CODIGO SOPORTES -->
+
+
+
+
+  <link name="soporte1_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte1_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte1_base1"/>
+    <origin rpy="0 0 0" xyz="0.2 0.21 0.100"/>
+  </joint>
+
+  <link name="soporte1_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte1_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte1_base2"/>
+    <origin rpy="0 0 0" xyz="-0.2 0.21 0.1000"/>
+  </joint>
+
+  <link name="soporte2_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte2_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte2_base1"/>
+    <origin rpy="0 0 0" xyz="0.2 0.1050 0.100"/>
+  </joint>
+
+  <link name="soporte2_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte2_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte2_base2"/>
+    <origin rpy="0 0 0" xyz="-0.2 0.1050 0.100"/>
+  </joint>
+
+  <link name="soporte3_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte3_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte3_base1"/>
+    <origin rpy="0 0 0" xyz="0.2 0 0.100"/>
+  </joint>
+
+  <link name="soporte3_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte3_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte3_base2"/>
+    <origin rpy="0 0 0" xyz="-0.2 0 0.100"/>
+  </joint>
+
+  <link name="soporte4_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte4_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte4_base1"/>
+    <origin rpy="0 0 0" xyz="0.2 -0.105 0.100"/>
+  </joint>
+
+  <link name="soporte4_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte4_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte4_base2"/>
+    <origin rpy="0 0 0" xyz="-0.2 -0.105 0.100"/>
+  </joint>
+
+  <link name="soporte5_base1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte5_base1_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte5_base1"/>
+    <origin rpy="0 0 0" xyz="0.2 -0.210 0.100"/>
+  </joint>
+
+  <link name="soporte5_base2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.012"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte5_base2_to_chasis2" type="fixed">
+    <parent link="chasis2"/>
+    <child link="soporte5_base2"/>
+    <origin rpy="0 0 0" xyz="-0.2 -0.210 0.100"/>
+  </joint>
+
+
+
+
+
+<!-- CÓDIGO SOPORTES BRAZOS -->
+
+
+
+
+
+  <link name="soporte_ur3_sep">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.08"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.08"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte_ur3_sep_to_chassis1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="soporte_ur3_sep"/>
+    <origin rpy="0 0 0" xyz="0.05 0 0.2250"/>
+  </joint>
+
+  <link name="soporte_ur3_at">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.075" radius="0.08"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.075" radius="0.08"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="soporte_ur3_at_to_chassis1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="soporte_ur3_at"/>
+    <origin rpy="0 0 0" xyz="-0.55 0 0.1875"/>
+  </joint>
+
+
+
+
+<!-- CÓDIGO ZONA DE TRABAJO Y BUFFERS -->
+
+
+
+
+  <link name="zona_union">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 0.5 0.02"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.5 0.02"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_zona_union" type="fixed">
+    <parent link="chasis1"/>
+    <child link="zona_union"/>
+    <origin rpy="0 0 0" xyz="-0.25 0 0.16"/>
+  </joint>
+
+  <link name="pared1_buffer1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.2 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.2 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pared1_buffer1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared1_buffer1"/>
+    <origin rpy="0 0 0" xyz="-0.4 -0.24 0.175"/>
+  </joint>
+
+  <link name="pared2_buffer1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.2 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.2 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pared2_buffer1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared2_buffer1"/>
+    <origin rpy="0 0 0" xyz="-0.7 -0.24 0.175"/>
+  </joint>
+
+  <link name="pared3_buffer1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.28 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.28 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pared3_buffer1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared3_buffer1"/>
+    <origin rpy="0 0 1.57" xyz="-0.55 -0.15 0.175"/>
+  </joint>
+
+  <link name="pared4_buffer1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.28 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.28 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pared4_buffer1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared4_buffer1"/>
+    <origin rpy="0 0 1.57" xyz="-0.55 -0.33 0.175"/>
+  </joint>
+
+  <link name="pared1_buffer2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.2 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.2 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pared1_buffer2" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared1_buffer2"/>
+    <origin rpy="0 0 0" xyz="-0.4 0.24 0.175"/>
+  </joint>
+
+  <link name="pared2_buffer2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.2 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.2 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pared2_buffer2" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared2_buffer2"/>
+    <origin rpy="0 0 0" xyz="-0.7 0.24 0.175"/>
+  </joint>
+
+  <link name="pared3_buffer2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.28 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.28 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pared3_buffer2" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared3_buffer2"/>
+    <origin rpy="0 0 1.57" xyz="-0.55 0.15 0.175"/>
+  </joint>
+
+  <link name="pared4_buffer2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.28 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.28 0.05"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pared4_buffer2" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pared4_buffer2"/>
+    <origin rpy="0 0 1.57" xyz="-0.55 0.33 0.175"/>
+  </joint>
+
+
+
+<!-- CÓDIGO PATAS Y RUEDAS -->
+
+
+  <link name="pata1_parte1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.07 0.1 0.07"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.07 0.1 0.07"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pata1_parte1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pata1_parte1"/>
+    <origin rpy="0 0 0" xyz="0.7 0.4 0.08"/>
+  </joint>
+
+  <link name="pata2_parte1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.07 0.1 0.07"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.07 0.1 0.07"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pata2_parte1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pata2_parte1"/>
+    <origin rpy="0 0 0" xyz="0 0.4 0.08"/>
+  </joint>
+
+  <link name="pata3_parte1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.07 0.1 0.07"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.07 0.1 0.07"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pata3_parte1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pata3_parte1"/>
+    <origin rpy="0 0 0" xyz="0.7 -0.4 0.08"/>
+  </joint>
+
+  <link name="pata4_parte1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.07 0.1 0.07"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.07 0.1 0.07"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="chasis1_to_pata4_parte1" type="fixed">
+    <parent link="chasis1"/>
+    <child link="pata4_parte1"/>
+    <origin rpy="0 0 0" xyz="0 -0.4 0.08"/>
+  </joint>
+
+  <link name="pata1_parte2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.07 0.07 0.8"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.07 0.07 0.8"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="pata1_parte1_to_pata1_parte2" type="fixed">
+    <parent link="pata1_parte1"/>
+    <child link="pata1_parte2"/>
+    <origin rpy="0 0 0" xyz="0 0.015 0.435"/>
+  </joint>
+
+  <link name="pata2_parte2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.07 0.07 0.8"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.07 0.07 0.8"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="pata2_parte1_to_pata2_parte2" type="fixed">
+    <parent link="pata2_parte1"/>
+    <child link="pata2_parte2"/>
+    <origin rpy="0 0 0" xyz="0 0.015 0.435"/>
+  </joint>
+
+  <link name="pata3_parte2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.07 0.07 0.8"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.07 0.07 0.8"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="pata3_parte1_to_pata3_parte2" type="fixed">
+    <parent link="pata3_parte1"/>
+    <child link="pata3_parte2"/>
+    <origin rpy="0 0 0" xyz="0 -0.015 0.435"/>
+  </joint>
+
+  <link name="pata4_parte2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.07 0.07 0.8"/>
+      </geometry>
+      <material name="aluminium"/>
+    
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.07 0.07 0.8"/>
+      </geometry>
+      <material name="aluminium"/>
+    </collision>
+  </link>
+
+  <joint name="pata4_parte1_to_pata4_parte2" type="fixed">
+    <parent link="pata4_parte1"/>
+    <child link="pata4_parte2"/>
+    <origin rpy="0 0 0" xyz="0 -0.015 0.435"/>
+  </joint>
+
+  <link name="pata1_parte3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata1_parte2_to_pata1_parte3" type="fixed">
+    <parent link="pata1_parte2"/>
+    <child link="pata1_parte3"/>
+    <origin rpy="1.57 0 0" xyz="0 -0.11 0.37"/>
+  </joint>
+
+  <link name="pata2_parte3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata2_parte2_to_pata2_parte3" type="fixed">
+    <parent link="pata2_parte2"/>
+    <child link="pata2_parte3"/>
+    <origin rpy="1.57 0 0" xyz="0 -0.11 0.37"/>
+  </joint>
+
+  <link name="pata3_parte3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata3_parte2_to_pata3_parte3" type="fixed">
+    <parent link="pata3_parte2"/>
+    <child link="pata3_parte3"/>
+    <origin rpy="1.57 0 0" xyz="0 0.11 0.37"/>
+  </joint>
+
+  <link name="pata4_parte3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata4_parte2_to_pata4_parte3" type="fixed">
+    <parent link="pata4_parte2"/>
+    <child link="pata4_parte3"/>
+    <origin rpy="1.57 0 0" xyz="0 0.11 0.37"/>
+  </joint>
+
+  <link name="pata1_parte4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata1_parte3_to_pata1_parte4" type="fixed">
+    <parent link="pata1_parte3"/>
+    <child link="pata1_parte4"/>
+    <origin rpy="0 0 0" xyz="0 0 0.09"/>
+  </joint>
+
+  <link name="pata2_parte4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata2_parte3_to_pata2_parte4" type="fixed">
+    <parent link="pata2_parte3"/>
+    <child link="pata2_parte4"/>
+    <origin rpy="0 0 0" xyz="0 0 0.09"/>
+  </joint>
+
+  <link name="pata3_parte4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata3_parte3_to_pata3_parte4" type="fixed">
+    <parent link="pata3_parte3"/>
+    <child link="pata3_parte4"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.09"/>
+  </joint>
+
+  <link name="pata4_parte4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata4_parte3_to_pata4_parte4" type="fixed">
+    <parent link="pata4_parte3"/>
+    <child link="pata4_parte4"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.09"/>
+  </joint>
+
+  <link name="pata1_parte5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata1_parte4_to_pata1_parte5" type="fixed">
+    <parent link="pata1_parte4"/>
+    <child link="pata1_parte5"/>
+    <origin rpy="0 0 0" xyz="0 0 0.015"/>
+  </joint>
+
+  <link name="pata2_parte5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata2_parte4_to_pata2_parte5" type="fixed">
+    <parent link="pata2_parte4"/>
+    <child link="pata2_parte5"/>
+    <origin rpy="0 0 0" xyz="0 0 0.015"/>
+  </joint>
+
+  <link name="pata3_parte5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata3_parte4_to_pata3_parte5" type="fixed">
+    <parent link="pata3_parte4"/>
+    <child link="pata3_parte5"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.015"/>
+  </joint>
+
+  <link name="pata4_parte5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata4_parte4_to_pata4_parte5" type="fixed">
+    <parent link="pata4_parte4"/>
+    <child link="pata4_parte5"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.015"/>
+  </joint>
+
+  <link name="pata1_parte6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata1_parte5_to_pata1_parte6" type="fixed">
+    <parent link="pata1_parte5"/>
+    <child link="pata1_parte6"/>
+    <origin rpy="0 0 0" xyz="0 0 0.015"/>
+  </joint>
+
+  <link name="pata2_parte6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata2_parte5_to_pata2_parte6" type="fixed">
+    <parent link="pata2_parte5"/>
+    <child link="pata2_parte6"/>
+    <origin rpy="0 0 0" xyz="0 0 0.015"/>
+  </joint>
+
+  <link name="pata3_parte6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata3_parte5_to_pata3_parte6" type="fixed">
+    <parent link="pata3_parte5"/>
+    <child link="pata3_parte6"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.015"/>
+  </joint>
+
+  <link name="pata4_parte6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pata4_parte5_to_pata4_parte6" type="fixed">
+    <parent link="pata4_parte5"/>
+    <child link="pata4_parte6"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.015"/>
+  </joint>
+
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+
+</robot>
